@@ -23,4 +23,10 @@ public class Group {
     private String name;
     @OneToMany(mappedBy="group", fetch = FetchType.EAGER, cascade = CascadeType.ALL)
     private List<Member> members;
+
+ // Relação com Organization
+ @ManyToOne
+ @JoinColumn(name = "organization_id", nullable = false)
+ private Organization organization; 
+ 
 }
